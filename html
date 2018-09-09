@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href=""https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet"">
+	<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</head>
+
+<!--Begin navbar content here -->
+  <body>
+    <div class="container">
+<nav id="navbar">
+  <header class="header">CSS Documentation</header>
+  <ul>
+    <li><a href="#Introduction_To_CSS" class="nav-link">Introduction to CSS</a></li>
+    <li><a href="#Styling_Overview" class="nav-link">Styling Overview</a></li>
+    <li><a href="#CSS_Box_Model" class="nav-link">CSS Box Model</a></li>
+    <li><a href="#CSS_Layout" class="nav-link">CSS Layout</a></li>
+    <li><a href="#Reference" class="nav-link">Reference</a></li>
+</nav>
+  </div>
+
+<!--Begin main content here -->
+<main id="main-doc">
+  
+  <section class="main-section" id="Introduction_To_CSS">
+    <header>
+      <h1>Introduction to CSS</h1>
+    </header>
+    <p>CSS is a language for specifying how documents are presented to users — how they are styled, laid out, etc.</p>
+    <p>A document is usually a text file structured using a markup language — HTML is the most common markup language, but you will also come across other markup languages such as SVG or XML.</p>
+    <p>Presenting a document to a user means converting it into a usable form for your audience. Browsers, like Firefox, Chrome or Internet Explorer, are designed to present documents visually, for example, on a computer screen, projector or printer.</p>
+    <article>Web browsers apply CSS rules to a document to affect how they are displayed. A CSS rule is formed from:
+      <li>A set of properties, which have values set to update how the HTML content is displayed, for example I want my element's width to be 50% of its parent element, and its background to be red.</li>
+      <li>A selector, which selects the element(s) you want to apply the updated property values to. For example, I want to apply my CSS rule to all the paragraphs in my HTML document.</li>
+    </article>  
+  </section>
+  
+  <section class="main-section" id="Styling_Overview">
+    <header>
+      <h1>Styling Overview</h1>
+    </header>
+    <article>The CSS properties used to style text generally fall into two categories, which we'll look at separately in this article:
+      <li>Font styles: Properties that affect the font that is applied to the text, affecting what font is applied, how big it is, whether it is bold, italic, etc.</li>
+      <li>Text layout styles: Properties that affect the spacing and other layout features of the text, allowing manipulation of, for example, the space between lines and letters, and how the text is aligned within the content box.</li>
+    </article>
+    <p>The <code>color</code> property sets the color of the foreground content of the selected elements (which is usually the text, but can also include a couple of other things, such as an underline or overline placed on text using the <code>text-decoration</code> property).</p>
+    <p><code>color</code> can accept any CSS color unit, for example:</p>
+    <code>
+      p {<br>
+      color: red;<br>
+      }
+    </code>
+    <p>This will cause the paragraphs to become red, rather than the standard browser default black.</p>
+    <p>To set a different font on your text, you use the font-family property — this allows you to specify a font (or list of fonts) for the browser to apply to the selected elements. The browser will only apply a font if it is available on the machine the website is being accessed on; if not, it will just use a browser default font. A simple example looks like so:</p>
+    <code>
+      p {<br>
+	font-family: arial;<br>
+}
+    </code>
+    <p>This would make all paragraphs on a page adopt the arial font, which is found on any computer.</p>
+    <p>With basic font properties out the way, let's now have a look at properties we can use to affect text layout.</p>
+    <p>The <code>text-align</code> property is used to control how text is aligned within its containing content box. The available values are as follows, and work in pretty much the same way as they do in a regular word processor application:</p>
+    <li><code>left</code>: Left justifies the text.</li>
+    <li><code>right</code>: Right justifies the text.</li>
+    <li><code>center</code>: Centers the text.</li>
+    <li><code>justify</code>: Makes the text spread out, varying the gaps in between the words so that all lines of text are the same width. You need to use this carefully — it can look terrible, especially when applied to a paragraph with lots of long words in it. If you are going to use this, you should also think about using something else along with it, such as hyphens, to break some of the longer words across lines.</li>
+    <p>With basic font properties out the way, let's now have a look at properties we can use to affect text layout.</p>
+  </section>
+  
+  <section class="main-section" id="CSS_Box_Model">
+    <header>
+      <h1>CSS Box Model</h1>
+    </header>
+    <p>The CSS box model is the foundation of layout on the Web — each element is represented as a rectangular box, with the box's content, padding, border, and margin built up around one another like the layers of an onion. As a browser renders a web page layout, it works out what styles are applied to the content of each box, how big the surrounding onion layers are, and where the boxes sit in relation to one another. Before understanding how to create CSS layouts, you need to understand the box model — this is what we'll look at in this article.</p>
+    <p>Every element within a document is structured as a rectangular box inside the document layout, the size and "onion layers" of which can be tweaked using some specific CSS properties. The relevant properties are as follows:</p>
+    <p><code>width</code> and <code>height</code></p>
+    <p>The <code>width</code> and <code>height</code> properties set the width and height of the content box, which is the area in which the content of the box is displayed — this content includes both text content set inside the box, and other boxes representing nested child elements.</p>
+    <p><code>padding</code>
+      <p>Padding refers to the inner margin of a CSS box — between the outer edge of the content box and the inner edge of the border. The size of this layer can be set on all four sides at once with the <code>padding</code> shorthand property, or one side at a time with the <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code> and <code>padding-left</code> properties.</p>
+    <p><code>border</code></p>
+    <p>The border of a CSS box sits between the outer edge of the padding and the inner edge of the margin. By default the border has a size of 0 — making it invisible — but you can set the thickness, style and color of the border to make it appear. The <code>border</code> shorthand property allows you to set all of these on all four sides at once, for example <code>border: 1px solid black</code>.</p>
+    <p><code>margin</code></p>
+    <p>The margin surrounds a CSS box, and pushes up against other CSS boxes in the layout. It behaves rather like padding; the shorthand property is <code>margin</code> and the individual properties are <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code>, and <code>margin-left</code>.</p>
+  </section>
+  
+  <section class="main-section" id="CSS_Layout">
+    <header>
+      <h1>CSS Layout</h1>
+    </header>
+    <p>The elements that appear one below the other are described as block elements, in contrast to inline elements, which appear one beside the other, like the individual words in a paragraph.</p>
+    <p>When you use CSS to create a layout, what you are doing is moving the elements away from this normal flow, however for many of the elements on your page this normal flow will create exactly the layout you need. This is why starting with a well-structured HTML document is so important, as you can then work with the way things are laid out by default rather than fighting against it.</p>
+    <p>The methods that can change how elements are laid out in CSS are as follows:</p>
+    <li>The <code>display</code> property — Standard values such as <code>block</code>, <code>inline</code> or <code>inline-block</code> can change how elements behave in normal flow (see Types of CSS boxes for more information). We then have entire layout methods that are switched on via a value of <code>display</code>, for example CSS Grid and Flexbox.</li>
+    <li>Floats — Applying a <code>float</code> value such as <code>left</code> can cause block level elements to wrap alongside one side of an element, like the way images sometimes have text floating around them in magazine layouts.</li>
+    <li>The <code>position</code> property — Allows you to precisely control the placement of boxes inside other boxes. <code>static</code> positioning is the default in normal flow, but you can cause elements to be laid out differently using other values, for example always fixed to the top left of the browser viewport.</li>
+    <li>Table layout — features designed for styling the parts of an HTML table can be used on non-table elements using <code>display: table</code> and associated properties.</li>
+    <li>Multi-column layout — The Multi-column layout properties can cause the content of a block to layout in columns, as you might see in a newspaper.</li>
+    </section>
+  <section class="main-section" id="Reference">
+    <header>
+      <h1>Reference</h1>
+    </header>
+      <p>All information used in this Technical Documentation page was obtained from <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS" target="_blank">MDN.</a></p>
+  </section>
+                 
+</main>
+<!-- end main content here -->
+<footer>This page was created as a project for FreeCodeCamp.</footer>
+  </body>
+  </html>
